@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ESNext"],
+    "types": ["bun-types"],
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "paths": {
+      "@openzerg/common": ["../common/client/src/index.ts"],
+      "@openzerg/common/*": ["../common/client/src/*"],
+      "@openzerg/common/gen/*": ["../common/generated/ts/gen/*"],
+      "@openzerg/common/entities/*": ["../common/generated/ts/entities/*"],
+      "@openzerg/tool-server-sdk": ["../common/tool-server-sdk/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*"]
+}
