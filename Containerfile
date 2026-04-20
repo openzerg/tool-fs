@@ -1,10 +1,10 @@
 FROM oven/bun:alpine AS builder
 RUN apk add --no-cache git
 WORKDIR /app
-COPY tool-fs/package.json tool-fs/bun.lock* ./
+COPY package.json bun.lock* ./
 RUN bun install
-COPY tool-fs/src/ src/
-COPY tool-fs/tsconfig.json ./
+COPY src/ src/
+COPY tsconfig.json ./
 RUN bun build --compile src/main.ts --outfile tool-fs
 
 FROM docker.io/library/alpine:latest
